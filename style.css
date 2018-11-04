@@ -1,0 +1,139 @@
+
+
+body {
+	overflow: hidden; /* hide the scrollbar */
+	font-family: 'Source Code Pro', monospace;
+}
+
+#logo {
+	position: absolute;
+	width: 30%;
+	bottom: 10px;
+	left: 10px;
+	animation-duration: 2s;
+	animation-name: slide-up;
+
+}
+
+#nav-div {
+	position: absolute;
+	left: 90%;
+	top: 15%;
+	width: 100%;
+
+	animation-duration: 2s;
+	animation-name: slide-left;
+}
+
+#nav-div ul {
+	list-style: none;
+	line-height: 2.3em;
+}
+
+#nav-div a {
+	text-decoration: none;
+	color: black;
+	font-size: 16pt;
+}
+
+#nav-div a.selected {
+	font-weight: 800;
+}
+
+.pane {
+	position: absolute;
+	border: 2px solid black;
+	border-top: none;
+	padding-top: 10px;
+	border-radius: 0px 0px 5px 5px;
+	width: 12%;
+	text-align: center;
+	color: #000;
+	transition: padding-top 0.5s ease-in-out;
+}
+
+.pane p {
+	margin-bottom: 8px;
+	font-size: 14pt;
+	color: #000;
+}
+
+#pane-web {
+	left: 5%;
+	background-color: #99d3df;
+}
+
+#pane-web:hover ~ body {
+	background-color: #99d3df;
+}
+
+#pane-apps {
+	left: 20%;
+	background-color: #88bbd6;
+}
+
+#pane-design {
+	left: 35%;
+	background-color: #cdcdcd;
+}
+
+.pane:hover {
+	padding-top: 5%;
+}
+
+#intro-text {
+	background-color: #fff;
+	color: #fff;
+	animation-delay: 1s;
+	animation-duration: 3s;
+	animation-name: intro;
+	animation-fill-mode: forwards;
+
+	width: 50%;
+	padding: 20px;
+	text-align: center;
+	font-family: 'Oxygen Mono', monospace;
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#intro-text p {
+	font-size: 14pt;
+}
+
+#intro-text h3 {
+	font-size: 16pt;
+}
+
+@keyframes intro {
+	0% {
+		background-color: #fff;
+		color: #fff;
+	}
+	100% {
+		color: #000;
+	}
+}
+
+/* animation frames for #logo */
+@keyframes slide-up {
+	0% {
+		bottom: -25%;
+	}
+	100% {
+		bottom: 10px;
+	}
+}
+
+/* animation frames for #nav */
+@keyframes slide-left {
+	0% {
+		left: 100%;	
+	}
+	100% {
+		left: 90%;
+	}
+}
