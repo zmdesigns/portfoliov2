@@ -25,28 +25,64 @@
 	    </header>
 	    <div id="wrapper">
 			<section>
-				<div class="pane" id="pane-web">
-					<i class="fas fa-desktop fa-2x"></i>
-					<p>Web</p>
-				</div>
-				<div class="pane" id="pane-apps">
-					<div class="pane-work-img">
-						<i class="fas fa-terminal fa-2x"></i>
-						<p>Apps</p>
+				<a href="#" id="web-link">
+					<div class="pane" id="pane-web">
+						<i class="fas fa-desktop fa-2x"></i>
+						<p>Web</p>
 					</div>
-				</div>
-				<div class="pane" id="pane-design">
-					<div class="pane-work-img">
-						<i class="fas fa-palette fa-2x"></i>
-						<p>Design</p>
+				</a>
+				<a href="#" id="app-link">
+					<div class="pane" id="pane-apps">
+						<div class="pane-work-img">
+							<i class="fas fa-terminal fa-2x"></i>
+							<p>Apps</p>
+						</div>
 					</div>
-				</div>
+				</a>
+				<a href="#" id="design-link">
+					<div class="pane" id="pane-design">
+						<div class="pane-work-img">
+							<i class="fas fa-palette fa-2x"></i>
+							<p>Design</p>
+						</div>
+					</div>
+				</a>
 			</section>
 			<section>
-				<div id="intro-text">
+				<div id="intro-text" class="middle-content">
 					<h3>Hello. I'm Zack Madden.</h3>
 					<p>I do full stack web development and graphic design.</p>
 					<p>Check out my work and contact me if you would like to talk about your project.</p>
+				</div>
+				<div id="web-work" class="middle-content">
+					<h3>Web Work</h3>
+					<div class="work-container">
+						<div id="work-1">
+							<a href="https://kcacnl.com">
+								<img src="" alt="KCACNL Website">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div id="app-work" class="middle-content">
+					<h3>App Work</h3>
+					<div class="work-container">
+						<div id="work-1">
+							<a href="">
+								<img src="" alt="Mobile App">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div id="design-work" class="middle-content">
+					<h3>App Work</h3>
+					<div class="work-container">
+						<div id="work-1">
+							<a href="">
+								<img src="" alt="Logo Design">
+							</a>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
@@ -55,3 +91,44 @@
 		</footer>
 	</div>
 </body>
+
+</html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+	var webLink = document.getElementById('web-link');
+	webLink.onclick = function() {
+		var webWork = document.getElementById('web-work');
+		hideMiddleContent();
+		webWork.style.display = 'block';
+	}
+
+	var appLink = document.getElementById('app-link');
+	appLink.onclick = function() {
+		var appWork = document.getElementById('app-work');
+		hideMiddleContent();
+		appWork.style.display = 'block';
+	}
+
+	var designLink = document.getElementById('design-link');
+	designLink.onclick = function() {
+		var designWork = document.getElementById('design-work');
+		hideMiddleContent();
+		designWork.style.display = 'block';
+	}
+
+	function hideMiddleContent() {
+		var introText = document.getElementById('intro-text');
+		var webWork = document.getElementById('web-work');
+		var appWork = document.getElementById('app-work');
+		var designWork = document.getElementById('design-work');
+
+		introText.style.display = 'none';
+		webWork.style.display = 'none';
+		appWork.style.display = 'none';
+		designWork.style.display = 'none';
+	}
+}, false);
+
+</script>

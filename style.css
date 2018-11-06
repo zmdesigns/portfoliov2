@@ -52,6 +52,10 @@ body {
 	transition: padding-top 0.5s ease-in-out;
 }
 
+.pane:hover {
+	
+}
+
 .pane p {
 	margin-bottom: 8px;
 	font-size: 14pt;
@@ -60,10 +64,6 @@ body {
 
 #pane-web {
 	left: 5%;
-	background-color: #99d3df;
-}
-
-#pane-web:hover ~ body {
 	background-color: #99d3df;
 }
 
@@ -77,8 +77,14 @@ body {
 	background-color: #cdcdcd;
 }
 
-.pane:hover {
-	padding-top: 5%;
+.middle-content {
+	text-align: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: 'Oxygen Mono', monospace;
+	border: 2px solid black;
 }
 
 #intro-text {
@@ -90,14 +96,25 @@ body {
 	animation-fill-mode: forwards;
 
 	width: 50%;
-	padding: 20px;
-	text-align: center;
-	font-family: 'Oxygen Mono', monospace;
+	padding: 20px;	
+}
 
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+#web-work {
+	display: none;
+	width: 50%;
+	padding: 20px;
+}
+
+#app-work {
+	display: none;
+	width: 50%;
+	padding: 20px;
+}
+
+#design-work {
+	display: none;
+	width: 50%;
+	padding: 20px;
 }
 
 #intro-text p {
@@ -107,6 +124,8 @@ body {
 #intro-text h3 {
 	font-size: 16pt;
 }
+
+
 
 @keyframes intro {
 	0% {
