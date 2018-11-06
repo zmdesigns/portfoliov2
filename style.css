@@ -5,6 +5,10 @@ body {
 	font-family: 'Source Code Pro', monospace;
 }
 
+a {
+	text-decoration: none; /*remove default link styling */
+}
+ 
 #logo {
 	position: absolute;
 	width: 30%;
@@ -87,6 +91,11 @@ body {
 	border: 2px solid black;
 }
 
+.work-link p {
+	margin: 0;
+	color: black;
+}
+
 #intro-text {
 	background-color: #fff;
 	color: #fff;
@@ -94,7 +103,7 @@ body {
 	animation-duration: 3s;
 	animation-name: intro;
 	animation-fill-mode: forwards;
-
+	border: none;
 	width: 50%;
 	padding: 20px;	
 }
@@ -115,6 +124,12 @@ body {
 	display: none;
 	width: 50%;
 	padding: 20px;
+}
+
+#work-img {
+	width: 60%;
+	height: auto;
+	padding: 1em;
 }
 
 #intro-text p {
