@@ -7,11 +7,20 @@ body {
 
 a {
 	text-decoration: none; /*remove default link styling */
+	text-decoration: underline;
+}
+
+p {
+	font-size: 14pt;
+}
+
+h3 {
+	font-size: 18pt;
 }
  
 #logo {
 	position: absolute;
-	width: 30%;
+	width: 25%;
 	bottom: 10px;
 	left: 10px;
 	animation-duration: 2s;
@@ -61,6 +70,7 @@ a {
 }
 
 .pane p {
+	font-family: 'Oxygen Mono', monospace;
 	margin-bottom: 8px;
 	font-size: 14pt;
 	color: #000;
@@ -68,17 +78,17 @@ a {
 
 #pane-web {
 	left: 5%;
-	background-color: #99d3df;
+	/*background-color: #99d3df;*/
 }
 
 #pane-apps {
 	left: 20%;
-	background-color: #88bbd6;
+	/*background-color: #88bbd6;*/
 }
 
 #pane-design {
 	left: 35%;
-	background-color: #cdcdcd;
+	/*background-color: #cdcdcd;*/
 }
 
 .middle-content {
@@ -88,13 +98,14 @@ a {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-family: 'Oxygen Mono', monospace;
-	border: 2px solid black;
+
+
+	width: 50%;
+	padding: 20px;
+	display: none;
 }
 
-.work-link p {
-	margin: 0;
-	color: black;
-}
+
 
 #intro-text {
 	background-color: #fff;
@@ -104,26 +115,19 @@ a {
 	animation-name: intro;
 	animation-fill-mode: forwards;
 	border: none;
-	width: 50%;
-	padding: 20px;	
+	display: inline-block;
 }
 
 #web-work {
-	display: none;
-	width: 50%;
-	padding: 20px;
+	
 }
 
 #app-work {
-	display: none;
-	width: 50%;
-	padding: 20px;
+
 }
 
 #design-work {
-	display: none;
-	width: 50%;
-	padding: 20px;
+
 }
 
 #work-img {
@@ -132,12 +136,9 @@ a {
 	padding: 1em;
 }
 
-#intro-text p {
-	font-size: 14pt;
-}
-
-#intro-text h3 {
-	font-size: 16pt;
+.work-link p {
+	margin: 0;
+	color: black;
 }
 
 
