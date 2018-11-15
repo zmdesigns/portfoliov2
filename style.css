@@ -25,8 +25,8 @@ h3 {
 
 .pcont {
 	flex: 1;
-	margin-left: 1%;
-	margin-right: 1%;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
 .pane {
@@ -35,13 +35,20 @@ h3 {
 	padding-top: 10px;
 	border-radius: 0px 0px 5px 5px;
 	color: #000;
-	transition: padding-top 0.5s ease-in-out;
+	-webkit-transition: color 0.5s ease, background-color 0.5s ease;
+	-moz-transition: color 0.5s ease, background-color 0.5s ease;
+	-o-transition: color 0.5s ease, background-color 0.5s ease;
+	transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+.pane:hover {
+	color: #fff;
+	background-color: #000;
 }
 
 .pane p {
 	font-family: 'Oxygen Mono', monospace;
 	margin-bottom: 8px;
-	color: #000;
 }
  
 #logo {
@@ -60,9 +67,8 @@ h3 {
 	right: -10%;
 	text-align: right;
 
-	animation-name: slide-left;
-	animation-duration: 1s;
-	animation-fill-mode: forwards;
+	-webkit-animation: 1s slide-left forwards;
+	animation: 1s slide-left forwards;
 }
 
 #nav-div ul {
@@ -80,30 +86,32 @@ h3 {
 	font-weight: 800;
 }
 
-
-
-
-
 .middle-content {
 	text-align: center;
 	font-family: 'Oxygen Mono', monospace;
-
 	padding: 20px;
+
+	/*center*/
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+
+	/* hide middle content by default */
 	display: none;
 }
 
-
-
 #intro-text {
+	display: inline-block;
 	background-color: #fff;
 	color: #000;
 	opacity: 0;
-	animation-delay: 1s;
-	animation-duration: 3s;
-	animation-name: intro;
-	animation-fill-mode: forwards;
 	border: none;
-	display: inline-block;
+
+	-webkit-animation: 3s 1s forwards intro;
+	animation: 3s 1s forwards intro;
 }
 
 #web-work {
@@ -174,16 +182,30 @@ h3 {
 	.middle-content {
 		width: 90%;
 		padding: 0;
-		position: relative;
+	}
+
+	.middle-content p {
+		font-size: 12pt;
+	}
+
+	.middle-content h3 {
+		font-size: 14pt;
+		margin: 0;
 	}
 
 	#nav-div {
 		text-align: center;
+		width: 100%;
+	}
+
+	#nav-div ul {
+		padding-left: 0;
 	}
 
 	#nav-div li {
 		display: inline;
-
+		padding: 10px;
+		border: 1px solid black;
 	}
 
   }
