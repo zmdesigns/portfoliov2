@@ -14,7 +14,7 @@ p {
 }
 
 h3 {
-	font-size: 16pt;
+	font-size: 20pt;
 }
 
 #pane-section {
@@ -41,14 +41,29 @@ h3 {
 	transition: color 0.5s ease, background-color 0.5s ease;
 }
 
-.pane:hover {
-	color: #fff;
-	background-color: #000;
-}
-
 .pane p {
 	font-family: 'Oxygen Mono', monospace;
 	margin-bottom: 8px;
+}
+
+#pane-web {
+	background-color: #18509d;
+	color: #fff;
+}
+
+#pane-apps {
+	background-color: #3b245d;
+	color: #fff;
+}
+
+#pane-design {
+	background-color: #0b6623;
+	color: #fff;
+}
+
+.pane:hover {
+	color: #fff;
+	background-color: #000;
 }
  
 #logo {
@@ -88,8 +103,7 @@ h3 {
 
 .middle-content {
 	text-align: center;
-	font-family: 'Oxygen Mono', monospace;
-	padding: 20px;
+	padding: 40px;
 
 	/*center*/
 	position: fixed;
@@ -98,7 +112,7 @@ h3 {
 	-webkit-transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
-
+	border: 2px solid black;
 	/* hide middle content by default */
 	display: none;
 }
@@ -106,12 +120,15 @@ h3 {
 #intro-text {
 	display: inline-block;
 	background-color: #fff;
-	color: #000;
 	opacity: 0;
 	border: none;
 
 	-webkit-animation: 3s 1s forwards intro;
 	animation: 3s 1s forwards intro;
+}
+
+#intro-text p {
+	margin-top: 0;
 }
 
 #web-work {
@@ -134,7 +151,7 @@ h3 {
 
 .work-link p {
 	margin: 0;
-	color: black;
+	color: #fff;
 }
 
 
@@ -196,6 +213,7 @@ h3 {
 	#nav-div {
 		text-align: center;
 		width: 100%;
+		margin-top: 20px;
 	}
 
 	#nav-div ul {
