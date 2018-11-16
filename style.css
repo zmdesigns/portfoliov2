@@ -26,14 +26,15 @@ h3 {
 
 .pcont {
 	flex: 1;
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: 2%;
+	margin-right: 2%;
 }
 
 .pane {
 	border: 2px solid black;
 	border-top: none;
 	padding-top: 10px;
+	padding-bottom: 10px;
 	border-radius: 0px 0px 5px 5px;
 	color: #000;
 	-webkit-transition: color 0.5s ease, background-color 0.5s ease;
@@ -72,9 +73,10 @@ h3 {
  
 #logo {
 	position: absolute;
-	width: 25%;
-	bottom: 10px;
-	left: 10px;
+	width: 50%;
+	max-width: 400px;
+	bottom: 20px;
+	left: 20px;
 	animation-duration: 1s;
 	animation-name: slide-up;
 
@@ -160,6 +162,17 @@ h3 {
 	color: #000;
 }
 
+.my-links {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+.mail-icon {
+	color: #000;
+	margin-right: 5px;
+}
+
 
 
 @keyframes intro {
@@ -193,10 +206,6 @@ h3 {
 
 /* Smaller Screens */
 @media only screen and (max-device-width: 1024px) {
-	#pane-section {
-		width: 100%;
-	}
-
 	#logo {
 		width: 90%;
 		text-align: center;
@@ -230,6 +239,10 @@ h3 {
 		display: inline;
 		padding: 10px;
 		border: 1px solid black;
+	}
+
+	#github {
+		display: none;
 	}
 
   }
