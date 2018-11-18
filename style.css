@@ -2,11 +2,15 @@
 
 body {
 	overflow: hidden; /* hide the scrollbar */
-	font-family: 'Source Code Pro', monospace;
+	font-family: 'Oxygen Mono', monospace;
 }
 
 a {
 	text-decoration: none; /*remove default link styling */
+}
+
+a:focus {
+	outline: 0; /*remove outliine after being clicked*/
 }
 
 p {
@@ -21,7 +25,9 @@ h3 {
 #pane-section {
 	text-align: center;
 	display: flex;
-	width: 100%;
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
 }
 
 .pcont {
@@ -139,18 +145,6 @@ h3 {
 	margin-top: 0;
 }
 
-#web-work {
-
-}
-
-#app-work {
-
-}
-
-#design-work {
-
-}
-
 #work-img {
 	width: 60%;
 	height: auto;
@@ -172,6 +166,7 @@ h3 {
 	color: #000;
 	margin-right: 5px;
 }
+
 
 
 
