@@ -13,7 +13,6 @@
   	<div class="body-content">
 	    <header>
 			<a href="index.html"><img id="logo" src="zm-logo.png" alt="logo"></a>
-			
 	    </header>
 	    <div id="wrapper">
 			<section id ="pane-section">
@@ -85,6 +84,7 @@
 		</div>
 		<footer>
 			<div class="my-links">
+				<p>Contact Me</p>
 				<a href="mailto:zackmdesigns@gmail.com" id="email"><i class="fas fa-envelope fa-4x mail-icon"></i></a>
 				<a href="https://github.com/zmdesigns" id="github" target="_blank" rel="noopener noreferrer"><img src="github.png" alt="github"></a>
 			</div>
@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var webLink = document.getElementById('web-link');
 	webLink.onclick = function() {
 		var webWork = document.getElementById('web-work');
+		var webPane = document.getElementById('pane-web');
 		hideMiddleContent();
 		webWork.style.display = 'block';
 	}
