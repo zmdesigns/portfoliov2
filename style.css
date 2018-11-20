@@ -60,11 +60,12 @@ h2 {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	border-radius: 0px 0px 5px 5px;
-	color: #000;
+	color: #fff;
 	-webkit-transition: color 0.5s ease, background-color 0.5s ease;
 	-moz-transition: color 0.5s ease, background-color 0.5s ease;
 	-o-transition: color 0.5s ease, background-color 0.5s ease;
 	transition: color 0.5s ease, background-color 0.5s ease;
+	
 }
 
 .pane p {
@@ -73,21 +74,15 @@ h2 {
 }
 
 #pane-web {
-	background-color: #333332;
 	background-color: #CC0063;
-	color: #fff;
 }
 
 #pane-apps {
-	background-color: #1352A2;
 	background-color: #86269B;
-	color: #fff;
 }
 
 #pane-design {
-	background-color: #FB6964;
 	background-color: #00D2F1;
-	color: #fff;
 }
 
 /* ---------------------- */
@@ -96,7 +91,7 @@ h2 {
 
 .middle-content {
 	text-align: center;
-	padding: 40px;
+	padding-bottom: 20px;
 
 	/*center*/
 	position: fixed;
@@ -120,10 +115,14 @@ h2 {
 
 #intro-text {
 	display: inline-block;
-	background-color: #fff;
-	color: #000;
+	background-color: #00B796;
+	color: #fff;
 	opacity: 0;
 	border: none;
+	padding: 40px;
+
+	border-radius: 5px;
+	box-shadow: 0px 15px 10px -10px rgba(0,0,0,0.4);
 
 	-webkit-animation: 3s 1s forwards intro;
 	animation: 3s 1s forwards intro;
@@ -173,7 +172,7 @@ h2 {
 
 .mail-icon {
 	color: #000;
-	margin-right: 5px;
+	margin-right: 2px;
 }
 
 #logo {
