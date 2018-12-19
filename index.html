@@ -11,45 +11,44 @@
 </head>
 <body>
   	<div class="body-content">
-	    <header>
-			<a href="index.html"><img id="logo" src="zm-logo.png" alt="logo"></a>
-	    </header>
-	    <div id="wrapper">
+		<div id="wrapper">
+			<header>
+				<section id="header-section">
+					<a id="logo-link" href="index.html"><img id="logo" src="zm-logo.png" alt="logo"></a>
+				</section>
+			</header>
+	    
 			<section id ="pane-section">
 				<div class="pcont">
-					<a href="#" id="web-link" >
-						<div class="pane" id="pane-web">
-							<i class="fas fa-desktop fa-2x"></i>
-							<p>Web</p>
+					<a href="#" id="web-link" class="nav-link" name="web">
+						<div class="pane" id="web-pane">
+							<p><i class="fas fa-desktop"></i> Web</p>
 						</div>
 					</a>
 				</div>
 				<div class="pcont">
-					<a href="#" id="app-link">
-						<div class="pane" id="pane-apps">
-							<i class="fas fa-terminal fa-2x"></i>
-							<p>Apps</p>
+					<a href="#" id="app-link" class="nav-link" name="apps">
+						<div class="pane" id="apps-pane">
+							<p><i class="fas fa-terminal"></i> Apps</p>
 						</div>
 					</a>
 				</div>
 				<div class="pcont">
-					<a href="#" id="design-link">
-						<div class="pane" id="pane-design">
-							<i class="fas fa-palette fa-2x"></i>
-							<p>Design</p>
+					<a href="#" id="design-link" class="nav-link" name="design">
+						<div class="pane" id="design-pane">
+							<p><i class="fas fa-palette"></i> Design</p>
 						</div>
 					</a>
 				</div>
 			</section>
-			<section>
+			<section id="content-section">
 				<div id="intro-text" class="middle-content">
 					<h2>Hello. I'm Zack Madden.</h2>
 					<p>I design and build websites.</p>
 				</div>
-				<div id="web-work" class="middle-content">
-					<h3>Web</h3>
+				<div id="web-content" class="middle-content">
 					<div class="work-container">
-						<div id="work-1">
+						<div>
 							<a href="https://kcacnl.com" class="work-link" target="_blank" rel="noopener noreferrer">
 								<img src="kcacnl.png" alt="KCACNL Website" id="work-img">
 								<p>Kern County Association of Nurse Leaders</p>
@@ -58,10 +57,9 @@
 						</div>
 					</div>
 				</div>
-				<div id="app-work" class="middle-content">
-					<h3>Apps</h3>
+				<div id="apps-content" class="middle-content">
 					<div class="work-container">
-						<div id="work-1">
+						<div>
 							<a href="" class="work-link">
 								<img src="" alt="">
 								<p>Check back soon!</p>
@@ -69,11 +67,10 @@
 						</div>
 					</div>
 				</div>
-				<div id="design-work" class="middle-content">
-					<h3>Design</h3>
+				<div id="design-content" class="middle-content">
 					<div class="work-container">
-						<div id="work-1" class="work-link">
-							<a href="">
+						<div>
+							<a href="" class="work-link">
 								<img src="" alt="">
 								<p>Check back soon!</p>
 							</a>
@@ -81,14 +78,17 @@
 					</div>
 				</div>
 			</section>
+			<footer>
+				<section id="links-section">
+					<div class="links">
+						<p>Contact Me</p>
+						<a href="mailto:zackmdesigns@gmail.com" id="email"><i class="fas fa-envelope fa-4x link-icon"></i></a>
+						<a href="https://www.facebook.com/zmdesigns" id="fb" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square fa-4x link-icon"></i></a>
+						<a href="https://github.com/zmdesigns" id="github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github fa-4x link-icon"></i></a>
+					</div>
+				</section>
+			</footer>
 		</div>
-		<footer>
-			<div class="my-links">
-				<p>Contact Me</p>
-				<a href="mailto:zackmdesigns@gmail.com" id="email"><i class="fas fa-envelope fa-4x mail-icon"></i></a>
-				<a href="https://github.com/zmdesigns" id="github" target="_blank" rel="noopener noreferrer"><img src="github.png" alt="github"></a>
-			</div>
-		</footer>
 	</div>
 </body>
 
@@ -96,40 +96,44 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    
-	var webLink = document.getElementById('web-link');
-	webLink.onclick = function() {
-		var webWork = document.getElementById('web-work');
-		var webPane = document.getElementById('pane-web');
-		hideMiddleContent();
-		webWork.style.display = 'block';
+
+	/* 
+		Naming convention required:
+			pane link class='nav-link' name=<content name>
+			pane div class='pane' id='<content name>-pane'
+			content class='middle-content' id='<content name>-content'
+	*/
+	const navLinks = document.getElementsByClassName('nav-link');
+	for (let navLink of navLinks) {
+		navLink.addEventListener('click', function() {
+			resetContent(this.name);
+		});
 	}
 
-	var appLink = document.getElementById('app-link');
-	appLink.onclick = function() {
-		var appWork = document.getElementById('app-work');
-		hideMiddleContent();
-		appWork.style.display = 'block';
+	/* Pass <content name> to show content */
+	function resetContent(showContentName) {
+		const middleContent = document.getElementsByClassName('middle-content');
+		const panes = document.getElementsByClassName('pane');
+		const showContent = document.getElementById(showContentName + '-content');
+		const paneContent = document.getElementById(showContentName + '-pane');
+
+		/* hide all middle content */
+		for (let content of middleContent) {
+			content.style.display = 'none';
+		}
+
+		/* reset text of all panes */
+		for (let pane of panes) {
+			pane.style.color = '#fff';
+		}
+
+		/* show passed content of passed name*/
+		showContent.style.display = 'block';
+
+		/* show currently active pane */
+		paneContent.style.color = '#000';
 	}
 
-	var designLink = document.getElementById('design-link');
-	designLink.onclick = function() {
-		var designWork = document.getElementById('design-work');
-		hideMiddleContent();
-		designWork.style.display = 'block';
-	}
-
-	function hideMiddleContent() {
-		var introText = document.getElementById('intro-text');
-		var webWork = document.getElementById('web-work');
-		var appWork = document.getElementById('app-work');
-		var designWork = document.getElementById('design-work');
-
-		introText.style.display = 'none';
-		webWork.style.display = 'none';
-		appWork.style.display = 'none';
-		designWork.style.display = 'none';
-	}
 }, false);
 
 </script>

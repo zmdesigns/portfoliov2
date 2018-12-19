@@ -4,7 +4,6 @@
 /* ---------------------- */
 
 body {
-	overflow: hidden; /* hide the scrollbar */
 	font-family: 'Oxygen Mono', monospace;
 }
 
@@ -31,21 +30,44 @@ h2 {
 }
 
 /* ---------------------- */
+/* Body-Content           */
+/* ---------------------- */
+
+.body-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#wrapper {
+	width: 100%;
+}
+
+/* ---------------------- */
+/* Header (Logo)          */
+/* ---------------------- */
+
+#header-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+}
+
+/* ---------------------- */
 /* Panes (Navigation)     */
 /* ---------------------- */
 
 #pane-section {
 	text-align: center;
 	display: flex;
-	width: 50%;
-	margin-left: 25%;
-	margin-right: 25%;
+	margin: 30px 20% 0;
 }
 
 .pcont {
 	flex: 1;
-	margin-left: 3%;
-	margin-right: 3%;
+	align-items: center;
+	margin: 0 4%;
 	box-shadow: 0px 15px 10px -10px rgba(0,0,0,0.4);
 	transition: all ease-in-out 400ms;
 }
@@ -57,9 +79,8 @@ h2 {
 
 .pane {
 	border-top: none;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border-radius: 0px 0px 5px 5px;
+	padding: 6px 10px;
+	border-radius: 5px;
 	color: #fff;
 	-webkit-transition: color 0.5s ease, background-color 0.5s ease;
 	-moz-transition: color 0.5s ease, background-color 0.5s ease;
@@ -72,15 +93,15 @@ h2 {
 	margin-bottom: 8px;
 }
 
-#pane-web {
+#web-pane {
 	background-color: #CC0063;
 }
 
-#pane-apps {
+#apps-pane {
 	background-color: #86269B;
 }
 
-#pane-design {
+#design-pane {
 	background-color: #00D2F1;
 }
 
@@ -88,17 +109,25 @@ h2 {
 /* Middle Content         */
 /* ---------------------- */
 
-.middle-content {
-	text-align: center;
-	padding-bottom: 20px;
+#content-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+}
 
-	/*center*/
+.middle-content {
+	flex: 1;
+	text-align: center;
+
+	/*center
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
+	*/
 
 	/* hide middle content by default */
 	display: none;
@@ -106,36 +135,27 @@ h2 {
 
 .middle-content h3 {
 	color: #fff;
-	padding: 10px;
+	display: inline-block;
+	padding: 10px 50px;
 	margin-bottom: 40px;
 	border-radius: 5px;
 }
 
 #intro-text {
+	
 	display: inline-block;
 	background-color: #00B796;
 	color: #fff;
 	opacity: 0;
 	border: none;
 	padding: 40px;
+	margin: 100px 0;
 
 	border-radius: 5px;
 	box-shadow: 0px 15px 10px -10px rgba(0,0,0,0.4);
 
-	-webkit-animation: 3s 1s forwards intro;
-	animation: 3s 1s forwards intro;
-}
-
-#web-work h3 {
-	background-color: #CC0063;
-}
-
-#app-work h3 {
-	background-color: #86269B;
-}
-
-#design-work h3 {
-	background-color: #00D2F1;
+	-webkit-animation: 2s 1s forwards intro;
+	animation: 2s 1s forwards intro;
 }
 
 #intro-text p {
@@ -143,7 +163,7 @@ h2 {
 }
 
 #work-img {
-	width: 60%;
+	width: 40%;
 	height: auto;
 	padding: 1em;
 }
@@ -162,27 +182,31 @@ h2 {
 /* Outside Links, Logo    */
 /* ---------------------- */
 
-.my-links {
-	position: absolute;
-	bottom: 20px;
-	right: 20px;
+#links-section {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-.mail-icon {
+.links {
+	display: inline-block;
+	flex: 1;
+}
+
+.links p {
+	margin: 0;
+	text-align: center;
+}
+
+.link-icon {
 	color: #000;
-	margin-right: 2px;
+	margin-right: 10px;
 }
 
-#logo {
-	position: absolute;
-	width: 50%;
-	max-width: 400px;
-	bottom: 20px;
-	left: 20px;
-	animation-duration: 1s;
-	animation-name: slide-up;
+.link-icon:hover {
+	color: #999;
 }
-
 
 /* ---------------------- */
 /* Animation              */
@@ -213,8 +237,7 @@ h2 {
 /* ---------------------- */
 @media only screen and (max-device-width: 1024px) {
 	#logo {
-		width: 90%;
-		text-align: center;
+		width: 100%;
 	}
 
 	#pane-section {
@@ -223,18 +246,33 @@ h2 {
 		margin-right: 5%;
 	}
 
+	#links-section {
+		margin: 0;
+	}
+
+	#content-section {
+		margin: 0;
+	}
+
+	#intro-text {
+		margin: 30px;
+	}
+
 	.middle-content {
-		width: 90%;
-		padding: 0;
+		margin: 30px;
 	}
 
 	.middle-content p {
-		font-size: 12pt;
+		font-size: 10pt;
 	}
 
 	.middle-content h3 {
 		font-size: 14pt;
 		margin: 0;
+	}
+
+	#work-img {
+		width: 80%;
 	}
 
 	#nav-div {
@@ -251,13 +289,5 @@ h2 {
 		display: inline;
 		padding: 10px;
 		border: 1px solid black;
-	}
-
-	#github {
-		display: none;
-	}
-
-	#email {
-		display: none;
 	}
   }
