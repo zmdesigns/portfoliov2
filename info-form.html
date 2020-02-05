@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Zack Madden | Web Design</title>
+	<link rel="stylesheet" href="normalize.css">
+	<link href="https://fonts.googleapis.com/css?family=Oxygen+Mono|Source+Code+Pro" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="body-content">
+		<div id="wrapper">
+			<header>
+				<section id="header-section">
+					<a id="logo-link" href="index.html"><img id="logo" src="zm-logo.png" alt="logo"></a>
+				</section>
+            </header>
+            <section id="content-section">
+                <form id="info-form" action="submit-form.php" method="post">
+                    <h2>Request Info</h2>
+                    <div class="text-input">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" name="contact_name">
+                    </div>
+                    <div class="text-input">
+                        <label for="phone">Phone</label>
+                        <input id="phone" type="text" name="contact_phone">
+                    </div>
+                    <div class="text-input">
+                        <label for="email">Email</label>
+                        <input id="email" type="text" name="contact_email">
+                    </div>
+                    <fieldset>
+                        <legend>Contact Method</legend>
+                        <ul>
+                            <li>
+                                <label for="pref_phone">
+                                    <input type="radio" id="pref_phone" name="pref" value="phone">
+                                    Call me
+                                </label>
+                            </li>
+                            <li>
+                                <label for="pref_email">
+                                    <input type="radio" id="pref_email" name="pref" value="email">
+                                    Email me
+                                </label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <div class="submit-btn">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+    </div>
+</body>
+</html>

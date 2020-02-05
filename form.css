@@ -1,0 +1,111 @@
+
+form ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+form li {
+    margin-bottom: 15px;
+}
+
+form h2 {
+    margin-bottom: 20px;
+}
+
+/* ------------------------------ */
+/* Inherit font for form elements */
+/* ------------------------------ */
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+}
+
+/* ------------------------------ */
+/* Consistent form element sizing */
+/* ------------------------------ */
+
+input, textarea, select, button {
+    width : 150px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ------------ */
+/* Radio inputs */
+/* ------------ */
+
+/* unstyle */
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #c0c0c0;
+    /* Adjusts the position of the checkboxes on the text baseline */
+    vertical-align: -4px;
+    outline: none;
+}
+
+input[type="radio"]::before {
+    display: block;
+    content: " ";
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #00B796;
+    font-size: 1.2em;
+    transform: scale(0);
+    transform-origin: center;
+    transition: all 0.3s ease-in;
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+    transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+}
+
+/* ----------- */
+/* Text inputs */
+/* ----------- */
+
+.text-input input[type="text"] {
+   width: 80%;
+   margin-bottom: 20px;
+   padding: 5px;
+   border: 1px solid #c0c0c0;
+}
+
+
+.text-input label {
+    display: inline-block;
+    width: 15%;
+    text-align: right;
+}
+
+.text-input input[type=text]:focus, textarea:focus {
+    box-shadow: 0 0 5px #00B796;
+    border: 1px solid #00B796;
+  }
+
+/* ------------- */
+/* Submit Button */
+/* ------------- */
+
+.submit-btn button {
+    margin: 30px 0px;
+    padding: 10px;
+    background-color: #00B796;
+    color: #fff;
+    font-size: 1.2em;
+    border: 1px solid #c0c0c0;
+}
+
+.submit-btn {
+
+}
