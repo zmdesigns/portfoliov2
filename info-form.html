@@ -19,7 +19,7 @@
 				</section>
             </header>
             <section id="content-section">
-                <form id="info-form" action="submit-form.php" method="post">
+                <form id="info-form" target="_blank" action="submit-form.php" method="post">
                     <h2>Request Info</h2>
                     <div class="text-input">
                         <label for="name">Name</label>
@@ -58,5 +58,15 @@
 
         </div>
     </div>
+
+<script src="js/inputmask.min.js"></script>
+<script>
+    //input mask to help with input of phone number
+    window.addEventListener('DOMContentLoaded', (event) => {
+        var phone_input = document.getElementById('phone');
+        var im = new Inputmask('(999)999-9999');
+        im.mask(phone_input);
+    });
+</script>
 </body>
 </html>

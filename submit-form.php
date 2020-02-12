@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $name = validate_input($_POST["contact_name"]);
     }
-    //echo $error;
+    echo $error;
 
     //send email
     $mail = new PHPMailer(true);
@@ -75,12 +75,12 @@ EOT;
         else {
             $msg = 'Invalid email address.';
         }
-        echo $msg . "\n" . "<a href='https://www.zackmdesigns.com/'>Go Back</a>";
+
     }
     catch (Exception $e) {
 
     }
-    
+    echo $msg;
 }
 
 function validate_input($data) {
