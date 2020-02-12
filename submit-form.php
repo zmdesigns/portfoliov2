@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail = new PHPMailer(true);
 
     try {
-        $mail->SMTPDebug = 2;
+        //$mail->SMTPDebug = 2;
         $mail->isSMTP();
         $mail->Host = 'smtp.dreamhost.com';
         $mail->SMTPAuth = true;
@@ -75,13 +75,10 @@ EOT;
         else {
             $msg = 'Invalid email address.';
         }
-        echo $msg;
+        echo $msg . "\n" . "<a href='https://www.zackmdesigns.com/'>Go Back</a>";
     }
     catch (Exception $e) {
-        echo $e->errorMessage();
-    }
-    catch (\Exception $e) {
-        echo $e->getMessage();
+
     }
     
 }
