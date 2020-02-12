@@ -1,10 +1,13 @@
 <?php
 
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require '../mail-info.php';
 require '/home/dh_nni3e9/zackmdesigns.com/vendor/autoload.php';
+
+date_default_timezone_set('America/Los_Angeles');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -31,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $name = validate_input($_POST["contact_name"]);
     }
-
+    //echo $error;
 
     //send email
     $mail = new PHPMailer(true);
@@ -46,25 +49,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
-        $mail->setFrom('zack@zackmdesigns.com', 'WEBSITE');
+        $mail->setFrom('zack@zackmdesigns.com', 'Contact Form');
         $mail->addAddress('zackmdesigns@gmail.com', 'Zack');
 
-        if ($mail->addReplyTo($_POST['email'], $_POST['name'])) {
-            $mail->Subject = 'PHPMailer contact form';
+        if ($mail->addReplyTo($email, $name)) {
+            $mail->Subject = 'Contact Form';
             //Keep it simple - don't use HTML
             $mail->isHTML(false);
             //Build a simple message body
             $mail->Body = <<<EOT
-                Email: {$email}
-                Name: {$name}
-                Phone: {$phone}
-                EOT;
+Email: {$email}
+Name: {$name}
+Phone: {$phone}
+EOT;
 
             if (!$mail->send()) {
                 //The reason for failing to send will be in $mail->ErrorInfo
                 //but you shouldn't display errors to users - process the error, log it on your server.
                 $msg = 'Sorry, something went wrong. Please try again later.';
-            } 
+            }
             else {
                 $msg = 'Message sent!';
             }
@@ -72,7 +75,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         else {
             $msg = 'Invalid email address.';
         }
+        echo $msg;
     }
+    catch (Exception $e) {
+        echo $e->errorMessage();
+    }
+    catch (\Exception $e) {
+        echo $e->getMessage();
+    }
+    
 }
 
 function validate_input($data) {
